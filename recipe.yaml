@@ -1,5 +1,6 @@
 package:
-  name: mozz
+  # The *package* is mozz_mlake; the *module* it installs is still `mozz`.
+  name: mozz_mlake
   version: "0.2.0"
 
 source:
@@ -18,9 +19,23 @@ requirements:
 
 about:
   homepage: https://github.com/ehsanmok/mozz
+  repository: https://github.com/ehsanmok/mozz
+  documentation: https://github.com/ehsanmok/mozz
   license: MIT
-  summary: Pure-Mojo fuzzing and property-based testing library
+  license_file: LICENSE
+  summary: Packaged build of mozz (ehsanmok/mozz) — Mojo fuzzing, imported as `mozz`
   description: |
+    THIS IS A REDISTRIBUTION. All of the code in this package is mozz, by
+    Ehsan M. Kermani <https://github.com/ehsanmok/mozz>, used under the MIT
+    licence. It is republished here only because mozz is not currently
+    published to any conda channel. Please direct stars, issues and pull
+    requests upstream, not to the repackager. This package should be abandoned
+    in favour of an official mozz package as soon as one exists.
+
+    Packaged by the magmalake project: https://github.com/magmalake/mozz_mlake
+
+    The module is imported as `mozz` (not `mozz_mlake`).
+
     mozz is a zero-external-dependency fuzzing and property-based testing
     library for Mojo.  Features include:
 

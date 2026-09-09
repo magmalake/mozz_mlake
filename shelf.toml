@@ -1,0 +1,6 @@
+name = "mozz_mlake"
+version = "0.2.0"
+description = "Packaged build of mozz by Ehsan M. Kermani (github.com/ehsanmok/mozz) — pure-Mojo fuzzing and property-based testing: raw-byte fuzz(), typed forall[T]() with an Arbitrary trait, shrinking. Republished only because mozz is not on a conda channel; imported as `mozz`. Please send stars and issues upstream."
+tags = ["mozz", "fuzzing", "property-based-testing", "testing", "quickcheck", "redistribution", "magmalake"]
+# other tins this one depends on; omit if none
+tins = []

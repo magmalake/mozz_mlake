@@ -7,7 +7,7 @@ version = "0.2.0"
 preview = ["pixi-build"]
 
 [package]
-name = "mozz"
+name = "mozz_mlake"
 version = "0.2.0"
 
 [package.build]
@@ -16,7 +16,12 @@ version = "0.2.0"
 # "invalid type: string, expected struct MatchSpec", killing fresh builds
 # before they start. 0.3.13 is the newest backend compatible with this
 # pixi; floating with "*" silently breaks CI.
-backend = { name = "pixi-build-rattler-build", version = "==0.3.13" }
+# Bumped from upstream's ``==0.3.13``. That pin requires a
+# ``pixi-build-api-version`` no longer published, so it cannot be solved by any
+# current pixi — upstream works around it by pinning CI to pixi 0.70.2. The
+# magmalake repos are all on pixi 0.78.0 (see mojoshelf tins.toml), so this
+# tracks the 0.4 series instead.
+backend = { name = "pixi-build-rattler-build", version = "0.4.*" }
 
 [dependencies]
 mozz = { path = "." }
