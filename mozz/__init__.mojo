@@ -50,7 +50,7 @@ Output::
 ### Level 2: Typed property tests
 
 ``Gen[T]`` is the parametric generator; use it instead of naming a specific
-``FuzzableXXX`` struct.  Compile-time dispatch via ``@parameter if``.
+``FuzzableXXX`` struct.  Compile-time dispatch via ``comptime if``.
 
 ```mojo
 from mozz import forall, Gen, Xoshiro256
@@ -120,7 +120,7 @@ error message).  Seeds are merged into the in-memory corpus before the run.
 ### ``forall[T]()``
 
 ```mojo
-def forall[T: ImplicitlyCopyable & Movable & ImplicitlyDeletable](
+def forall[T: ImplicitlyCopyable & Deinitable](
     prop:        def(T) raises -> Bool,
     gen:         def(mut Xoshiro256) -> T,
     minimize_fn: def(T) thin -> List[T],
@@ -180,12 +180,12 @@ Built-in structs: ``FuzzableBool``, ``FuzzableUInt8``, ``FuzzableUInt16``,
 ### ``Gen[T]``: parametric dispatch
 
 ```mojo
-struct Gen[T: ImplicitlyCopyable & Movable]:
+struct Gen[T: ImplicitlyCopyable]:
     @staticmethod def generate(mut rng: Xoshiro256) -> T
     @staticmethod def minimize(value: T)             -> List[T]
 ```
 
-Uses ``@parameter if T == UInt8:`` compile-time dispatch.  Supported: ``Bool``,
+Uses ``comptime if T == UInt8:`` compile-time dispatch.  Supported: ``Bool``,
 ``UInt8``, ``UInt16``, ``UInt32``, ``UInt64``, ``Int``, ``String``.
 Unsupported types fail at compile time with a ``constrained`` error.
 
@@ -194,7 +194,7 @@ Unsupported types fail at compile time with a ``constrained`` error.
 ```mojo
 from mozz import forall, Xoshiro256
 
-struct Color(ImplicitlyCopyable, Movable):
+struct Color(ImplicitlyCopyable):
     var r: UInt8; var g: UInt8; var b: UInt8
 
 struct FuzzableColor:
