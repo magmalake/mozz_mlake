@@ -80,7 +80,7 @@ struct Corpus(Movable):
         seeds.append(s2^)
         var s3: List[UInt8] = [0x00, 0x00]
         seeds.append(s3^)
-        return Corpus(seeds^)
+        return Corpus(seeds)
 
     def _insert(mut self, data: List[UInt8]):
         """Insert ``data`` if not already present; evict oldest if at capacity.
@@ -175,7 +175,7 @@ struct Corpus(Movable):
                     seeds.append(data^)
             except:
                 pass
-        return Corpus(seeds^)
+        return Corpus(seeds)
 
     @staticmethod
     def list_crashes(crash_dir: String) raises -> List[String]:

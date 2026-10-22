@@ -137,7 +137,7 @@ def test_constructor_from_list() raises:
     seeds.append(s1^)
     seeds.append(s2^)
     seeds.append(s3^)
-    var c = Corpus(seeds^)
+    var c = Corpus(seeds)
     assert_equal(c.size(), 2)
 
 
