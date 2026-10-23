@@ -3,12 +3,12 @@ authors = ["ehsanmok <ehsanmok@users.noreply.github.com>"]
 channels = ["https://conda.modular.com/max", "conda-forge"]
 name = "mozz"
 platforms = ["osx-arm64", "linux-aarch64", "linux-64"]
-version = "0.2.1"
+version = "0.2.2"
 preview = ["pixi-build"]
 
 [package]
 name = "mozz_mlake"
-version = "0.2.1"
+version = "0.2.2"
 
 [package.build]
 # Lower bound only, deliberately.
@@ -36,7 +36,7 @@ backend = { name = "pixi-build-rattler-build", version = ">=0.3.13" }
 # workspace at all. The Mojo import stays `from mozz import …` — that comes
 # from the `mozz/` directory, not from this name.
 mozz_mlake = { path = "." }
-mojo = ">=1.1.0,<2.0.0"
+mojo = ">=1.2.0,<2.0.0"
 
 [feature.dev.dependencies]
 git        = ">=2"               # For version checks and pre-commit
