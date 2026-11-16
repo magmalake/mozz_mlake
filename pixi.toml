@@ -79,3 +79,10 @@ docs-build = "mojodoc ./mozz --out-dir target/doc --base-url /mozz/"
 install-pre-commit = "pre-commit install"
 format       = { cmd = "mojo format mozz tests examples benchmark", depends-on = ["install-pre-commit"] }
 format-check = { cmd = "bash -c 'mojo format mozz tests examples benchmark && git diff --exit-code mozz tests examples benchmark || (echo \"Error: Code is not formatted. Run \\\"pixi run format\\\" to fix.\" && exit 1)'" }
+
+# customs (github.com/magmalake/customs) reads this table; pixi ignores it.
+[tool.customs.lints]
+# `tests` runs each test file with its own `mojo` run. It is upstream's
+# (ehsanmok/mozz) task, kept as upstream has it in this redistribution, and
+# CI here doesn't run it: a warning, not a failure.
+mojo-run-per-test = "warn"
