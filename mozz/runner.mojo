@@ -17,7 +17,7 @@ Example:
 """
 
 from .rng import Xoshiro256
-from .mutator import MutatorChain, default_mutator
+from .mutator import default_mutator
 from .corpus import Corpus, _fnv1a64, _mkdir, _write_file, _zero_pad
 
 

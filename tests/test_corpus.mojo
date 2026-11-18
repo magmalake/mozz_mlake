@@ -6,7 +6,6 @@ Covers: default seeds, deduplication, pick(), add(), max size eviction.
 from std.testing import (
     assert_equal,
     assert_true,
-    assert_false,
     assert_not_equal,
     TestSuite,
 )

@@ -8,7 +8,6 @@ from std.testing import (
     assert_equal,
     assert_true,
     assert_false,
-    assert_not_equal,
     TestSuite,
 )
 from mozz.rng import Xoshiro256
