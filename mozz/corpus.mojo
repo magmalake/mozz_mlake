@@ -262,7 +262,7 @@ def _validate_shell_path(path: String) raises:
     Raises:
         Error: If the path contains a single-quote character.
     """
-    if path.find("'") >= 0:
+    if "'" in path:
         raise Error(
             "mozz: path contains single quote which is unsafe for shell"
             " quoting: "

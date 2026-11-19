@@ -42,7 +42,7 @@ def is_crash(data: List[UInt8]) raises -> Bool:
         crasher(data)
         return False
     except e:
-        return String(e).find("panic") >= 0
+        return "panic" in String(e)
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────

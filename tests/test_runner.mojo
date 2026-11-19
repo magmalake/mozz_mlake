@@ -99,7 +99,7 @@ def test_runner_finds_crash() raises:
         )
     except e:
         var msg = String(e)
-        if msg.find("crash") >= 0 or msg.find("mozz") >= 0:
+        if "crash" in msg or "mozz" in msg:
             found = True
     assert_true(found)
 
@@ -119,7 +119,7 @@ def test_runner_finds_panic_empty() raises:
         )
     except e:
         var msg = String(e)
-        if msg.find("crash") >= 0 or msg.find("mozz") >= 0:
+        if "crash" in msg or "mozz" in msg:
             found = True
     assert_true(found)
 
