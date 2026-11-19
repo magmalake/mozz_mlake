@@ -345,19 +345,19 @@ def _is_crash(msg: String) -> Bool:
         ``True`` if the message contains a crash marker substring.
     """
     var lower = msg.lower()
-    if lower.find("assertion failed") >= 0:
+    if "assertion failed" in lower:
         return True
-    if lower.find("index out of bounds") >= 0:
+    if "index out of bounds" in lower:
         return True
-    if lower.find("null pointer") >= 0:
+    if "null pointer" in lower:
         return True
-    if lower.find("use after free") >= 0:
+    if "use after free" in lower:
         return True
-    if lower.find("stack overflow") >= 0:
+    if "stack overflow" in lower:
         return True
-    if lower.find("panic") >= 0:
+    if "panic" in lower:
         return True
-    if lower.find("aborted") >= 0:
+    if "aborted" in lower:
         return True
     return False
 

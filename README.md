@@ -28,6 +28,14 @@ in magmalake's own repositories.
 - **The package is named `mozz_mlake`**; the module is still imported as
   `mozz`, so no source changes are needed by consumers and switching to an
   official package later is a one-line dependency change.
+- **Built for the Mojo 1.3 nightly, `1.3.0.dev2026111805`**, the one
+  toolchain every magmalake tin uses, not upstream's `mojo >=1.2.0`: the
+  workspace and the recipe pin `mojo` exactly, on the `max-nightly`
+  channel. `String.find()` returns an `Optional` on the nightly, so the
+  substring checks in `mozz/runner.mojo`, `mozz/corpus.mojo`,
+  `mozz/__init__.mojo`, the replay example and the runner tests are
+  written with `in` instead of `find(...) >= 0`. Worth sending upstream
+  when it moves to 1.3.
 
 Nothing else. Upstream's README is preserved verbatim as
 [README.upstream.md](README.upstream.md).

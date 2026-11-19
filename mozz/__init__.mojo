@@ -234,7 +234,7 @@ def is_crash(data: List[UInt8]) raises -> Bool:
         my_target(data)
         return False
     except e:
-        return String(e).find("panic") >= 0
+        return "panic" in String(e)
 
 def main() raises:
     var paths = Corpus.list_crashes(".mozz_crashes")
