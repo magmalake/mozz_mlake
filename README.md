@@ -1,5 +1,7 @@
 # mozz_mlake
 
+[![Used by](https://mojourney.dev/badge/magmalake/mozz_mlake/used-by.svg)](https://mojourney.dev/repos/magmalake/mozz_mlake#used-by) [![Mojo version](https://mojourney.dev/badge/magmalake/mozz_mlake/mojo.svg)](https://mojourney.dev/repos/magmalake/mozz_mlake)
+
 **This is not a new fuzzing library. It is a packaged build of
 [mozz](https://github.com/ehsanmok/mozz) by
 [Ehsan M. Kermani](https://github.com/ehsanmok), redistributed so that
