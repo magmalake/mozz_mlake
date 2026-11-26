@@ -36,7 +36,7 @@ backend = { name = "pixi-build-rattler-build", version = ">=0.3.13" }
 # workspace at all. The Mojo import stays `from mozz import …` — that comes
 # from the `mozz/` directory, not from this name.
 mozz_mlake = { path = "." }
-mojo = "==1.3.0.dev2026112505"
+mojo = "==1.3.0.dev2026112605"
 
 [feature.dev.dependencies]
 git        = ">=2"               # For version checks and pre-commit
